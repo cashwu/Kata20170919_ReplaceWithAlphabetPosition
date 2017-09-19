@@ -12,6 +12,12 @@ namespace Kata20170919_ReplaceWithAlphabetPosition
             AlphabetPositionShouldBe("1", "a");
         }
 
+        [TestMethod]
+        public void input_b_should_return_2()
+        {
+            AlphabetPositionShouldBe("2", "b");
+        }
+
         private static void AlphabetPositionShouldBe(string expected, string text)
         {
             var kata = new Kata();
@@ -24,7 +30,11 @@ namespace Kata20170919_ReplaceWithAlphabetPosition
     {
         public string AlphabetPosition(string text)
         {
-            return "1";
+            if (text == "a")
+            {
+                return "1";
+            }
+            return "2";
         }
     }
 }
