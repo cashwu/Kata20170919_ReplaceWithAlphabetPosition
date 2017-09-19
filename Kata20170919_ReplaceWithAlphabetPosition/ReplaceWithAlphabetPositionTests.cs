@@ -49,6 +49,12 @@ namespace Kata20170919_ReplaceWithAlphabetPosition
             AlphabetPositionShouldBe("1 2 3 4", "Ab Cd");
         }
 
+        [TestMethod]
+        public void input_ab_plus_cd_should_return_1_2_3_4()
+        {
+            AlphabetPositionShouldBe("1 2 3 4", "ab + cd");
+        }
+
         private static void AlphabetPositionShouldBe(string expected, string text)
         {
             var kata = new Kata();
