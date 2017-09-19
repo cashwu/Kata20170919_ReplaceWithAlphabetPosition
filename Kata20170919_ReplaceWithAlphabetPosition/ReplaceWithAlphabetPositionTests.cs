@@ -24,6 +24,12 @@ namespace Kata20170919_ReplaceWithAlphabetPosition
             AlphabetPositionShouldBe("26", "z");
         }
 
+        [TestMethod]
+        public void input_A_should_return_1()
+        {
+            AlphabetPositionShouldBe("1", "A");
+        }
+
         private static void AlphabetPositionShouldBe(string expected, string text)
         {
             var kata = new Kata();
@@ -36,7 +42,7 @@ namespace Kata20170919_ReplaceWithAlphabetPosition
     {
         public string AlphabetPosition(string text)
         {
-            return (char.Parse(text) - 96).ToString();
+            return (char.Parse(text.ToLower()) - 96).ToString();
         }
     }
 }
