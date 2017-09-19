@@ -37,6 +37,12 @@ namespace Kata20170919_ReplaceWithAlphabetPosition
             AlphabetPositionShouldBe("1 2", "ab");
         }
 
+        [TestMethod]
+        public void input_ab_cd_should_return_1_2_3_4()
+        {
+            AlphabetPositionShouldBe("1 2 3 4", "ab cd");
+        }
+
         private static void AlphabetPositionShouldBe(string expected, string text)
         {
             var kata = new Kata();
@@ -49,7 +55,7 @@ namespace Kata20170919_ReplaceWithAlphabetPosition
     {
         public string AlphabetPosition(string text)
         {
-            return string.Join(" ", text.Select(c => char.ToLower(c) - 96));
+            return string.Join(" ", text.Where(char.IsLetter).Select(c => char.ToLower(c) - 96));
         }
     }
 }
