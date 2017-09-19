@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Kata20170919_ReplaceWithAlphabetPosition
@@ -30,6 +31,12 @@ namespace Kata20170919_ReplaceWithAlphabetPosition
             AlphabetPositionShouldBe("1", "A");
         }
 
+        [TestMethod]
+        public void input_ab_should_return_1_2()
+        {
+            AlphabetPositionShouldBe("1 2", "ab");
+        }
+
         private static void AlphabetPositionShouldBe(string expected, string text)
         {
             var kata = new Kata();
@@ -42,7 +49,7 @@ namespace Kata20170919_ReplaceWithAlphabetPosition
     {
         public string AlphabetPosition(string text)
         {
-            return (char.Parse(text.ToLower()) - 96).ToString();
+            return string.Join(" ", text.Select(c => char.ToLower(c) - 96));
         }
     }
 }
